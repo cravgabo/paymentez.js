@@ -18,7 +18,7 @@ module.exports = function (grunt) {
       },
       "css": {
         files: {
-          "paymentez.min.css": ["./src/css/**/*.css"]
+          "payment.min.css": ["./src/css/**/*.css"]
         }
       }
     },
@@ -33,7 +33,7 @@ module.exports = function (grunt) {
       },
       js: {
         files: {
-          "paymentez.min.js": ["src/js/**/*.js"]
+          "payment.min.js": ["src/js/**/*.js"]
         }
       }
     },

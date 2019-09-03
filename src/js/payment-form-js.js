@@ -390,7 +390,7 @@ PaymentezForm.prototype.cardTypeFromNumberBin = function (number) {
   let number_bin = number.replace(" ", "").substring(0, 6);
   if (number >= 6 && this.numberBin !== number_bin) {
     this.numberBin = number_bin;
-    Paymentez.getBinInformation(number_bin, this, this.successCallback, function (error) {
+    Payment.getBinInformation(number_bin, this, this.successCallback, function (error) {
     });
   }
 };
@@ -1883,7 +1883,7 @@ PaymentezForm.prototype.setupOtpValidation = function () {
   let wrapper = PaymentezForm.detachOrCreateElement(this.elem, ".otp-wrapper", "<div class='otp-wrapper'></div>");
   let label = PaymentezForm.detachOrCreateElement(this.elem, ".otp-label", "<label class='otp-label'></label>");
   label.attr("for", 'otp-option');
-  if (Paymentez.isCheckout()) {
+  if (Payment.isCheckout()) {
     label.append(PaymentezForm.OTP_PLACEHOLDER_CHECKOUT);
   } else {
     label.append(PaymentezForm.OTP_PLACEHOLDER_ADD);
@@ -1949,7 +1949,7 @@ PaymentezForm.prototype.setupVirtualKeyboard = function () {
 PaymentezForm.prototype.setupValidationMessage = function () {
   let wrapper = PaymentezForm.detachOrCreateElement(this.elem, ".validation-message", "<div class='validation-message'></div>");
   wrapper.addClass('paymentez_dialog_success');
-  if (Paymentez.isCheckout()) {
+  if (Payment.isCheckout()) {
     wrapper.text(PaymentezForm.OTP_EXPLICATION_CHECKOUT);
   } else {
     wrapper.text(PaymentezForm.OTP_EXPLICATION_ADD);

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>  
-  <title>Example Paymentez Add Card | PaymentezJs</title>
+  <title>Example Payment Add Card | PaymentJs</title>
   <meta charset="UTF-8">  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-  <link href="https://cdn.paymentez.com/js/1.0.1/paymentez.min.css" rel="stylesheet" type="text/css" />
-  <script src="https://cdn.paymentez.com/js/1.0.1/paymentez.min.js"></script>
+  <link href="https://cdn.clickpayredeban.com/js/2.0/payment.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.clickpayredeban.com/js/2.0/payment.min.js"></script>
 
   <style>
     .panel {
@@ -86,7 +86,7 @@ $(function() {
    * @param paymentez_client_app_code provided by Paymentez.
    * @param paymentez_client_app_key provided by Paymentez.
    */
-  Paymentez.init('stg', 'PAYMENTEZ_CLIENT_APP_CODE', 'PAYMENTEZ_CLIENT_APP_KEY');
+  Payment.init('stg', 'PAYMENTEZ_CLIENT_APP_CODE', 'PAYMENTEZ_CLIENT_APP_KEY');
   
   var form              = $("#add-card-form");
   var submitButton            = form.find("button");
@@ -129,7 +129,7 @@ $(function() {
        * @param success_callback a callback to receive the token
        * @param failure_callback a callback to receive an error
        */
-      Paymentez.addCard(uid, email, cardToSave, successHandler, errorHandler);
+      Payment.addCard(uid, email, cardToSave, successHandler, errorHandler);
 
     }
     

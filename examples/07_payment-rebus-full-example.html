@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>  
-  <title>Example Paymentez Add Card | PaymentezJs</title>
+  <title>Example Payment Add Card | PaymentezJs</title>
   <meta charset="UTF-8">  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -70,15 +70,15 @@ $(function() {
   // EXAMPLE CODE FOR PAYMENTEZ INTEGRATION
   // ---------------------------------------------------------------------------
   //
-  //  1.) You need to import the Paymentez JS -> https://cdn.paymentez.com/js/v1.0.1/paymentez.min.js
+  //  1.) You need to import the Payment JS -> https://cdn.paymentez.com/js/v1.0.1/paymentez.min.js
   //
-  //  2.) You need to import the Paymentez CSS -> https://cdn.paymentez.com/js/v1.0.1/paymentez.min.css
+  //  2.) You need to import the Payment CSS -> https://cdn.paymentez.com/js/v1.0.1/paymentez.min.css
   //
-  //  3.) Add The Paymentez Form
+  //  3.) Add The Payment Form
   //  <div class="paymentez-form" id="my-card" data-capture-name="true"></div>
   //
   //  3.) Init library
-  //  Replace "PAYMENTEZ_CLIENT_APP_CODE" and "PAYMENTEZ_CLIENT_APP_KEY" with your own Paymentez Client Credentials.
+  //  Replace "PAYMENTEZ_CLIENT_APP_CODE" and "PAYMENTEZ_CLIENT_APP_KEY" with your own Payment Client Credentials.
   //
   // 4.) Add Card: converts sensitive card data to a single-use token which you can safely pass to your server to charge the user.
 
@@ -86,10 +86,10 @@ $(function() {
    * Init library
    *
    * @param env_mode `prod`, `stg`, `local` to change environment. Default is `stg`
-   * @param paymentez_client_app_code provided by Paymentez.
-   * @param paymentez_client_app_key provided by Paymentez.
+   * @param paymentez_client_app_code provided by Payment.
+   * @param paymentez_client_app_key provided by Payment.
    */
-  Paymentez.init('stg', 'RBUS-CO-CLIENT', 'ctO5x1wQK9zu6mHnGFvmtBvt32AiBp');
+  Payment.init('stg', 'RBUS-CO-CLIENT', 'ctO5x1wQK9zu6mHnGFvmtBvt32AiBp');
   
   var form              = $("#add-card-form");
   var submitButton            = form.find("button");
@@ -132,7 +132,7 @@ $(function() {
        * @param success_callback a callback to receive the token
        * @param failure_callback a callback to receive an error
        */
-      Paymentez.addCard(uid, email, cardToSave, successHandler, errorHandler);
+      Payment.addCard(uid, email, cardToSave, successHandler, errorHandler);
 
     }
     

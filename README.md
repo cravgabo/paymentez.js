@@ -1,7 +1,7 @@
 # PaymentezJS
 ===================
 
-PaymentezJS is a library that allows developers to easily connect to the Paymentez CREDITCARDS API
+PaymentezJS is a library that allows developers to easily connect to the Payment CREDITCARDS API
 
 [View working example >](https://developers.paymentez.com/docs/payments/#javascript)
 
@@ -32,7 +32,7 @@ For production environment:
 
 For working examples of using PaymentezJS, see the [examples](https://github.com/paymentez/paymentez.js/tree/master/examples) folder of this project.
 
-### Using the Paymentez Form
+### Using the Payment Form
 Any elements with the class `paymentez-form` will be automatically converted into a basic credit card input with the expiry date and CVC check.
 
 The easiest way to get started with PaymentezForm is to insert the snippet of code:
@@ -62,10 +62,10 @@ You should initialize the library.
   * Init library
   *
   * @param env_mode `prod`, `stg`, `local` to change environment. Default is `stg`
-  * @param paymentez_client_app_code provided by Paymentez.
-  * @param paymentez_client_app_key provided by Paymentez.
+  * @param paymentez_client_app_code provided by Payment.
+  * @param paymentez_client_app_key provided by Payment.
   */
-Paymentez.init('stg', 'PAYMENTEZ_CLIENT_APP_CODE', 'PAYMENTEZ_CLIENT_APP_KEY');
+Payment.init('stg', 'PAYMENTEZ_CLIENT_APP_CODE', 'PAYMENTEZ_CLIENT_APP_KEY');
 ```
 
 ### addCard
@@ -81,7 +81,7 @@ addCard converts sensitive card data to a single-use token which you can safely 
  * @param success_callback a callback to receive the token
  * @param failure_callback a callback to receive an error
  */
-Paymentez.addCard(uid, email, cardToSave, successHandler, errorHandler);
+Payment.addCard(uid, email, cardToSave, successHandler, errorHandler);
 
 var successHandler = function(cardResponse) {
   console.log(cardResponse.card);
@@ -132,11 +132,11 @@ The third argument to addCard is a Card object. A Card contains the following fi
 
 ### getSessionId
 
-The Session ID is a parameter Paymentez use for fraud purposes. 
+The Session ID is a parameter Payment use for fraud purposes. 
 Call this method if you want to Collect your user's Device Information.
 
 ```javascript
-var session_id = Paymentez.getSessionId();
+var session_id = Payment.getSessionId();
 ```
 
 Once you have the Session ID, you can pass it to your server to charge the user.
@@ -202,7 +202,7 @@ data-invalid-card-type-message="Tarjeta invalida. Por favor ingresa una tarjeta 
 >
 ```
 
-Follow this link to see all [card types](https://paymentez.github.io/api-doc/#card-brands) allowed by Paymentez.
+Follow this link to see all [card types](https://paymentez.github.io/api-doc/#card-brands) allowed by Payment.
 
 
 ### Reading Values

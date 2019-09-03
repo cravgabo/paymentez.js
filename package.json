@@ -32,9 +32,10 @@
   "dependences": {
     "minimatch": ">=3.0.2",
     "sshpk": ">=1.13.2",
-    "lodash": ">=4.17.5",
+    "lodash": ">=4.17.13",
     "cryptiles": ">=4.1.2",
-    "hoek": ">=4.2.1"
+    "hoek": ">=4.2.1",
+    "diff": ">=3.5.0"
   },
   "devDependencies": {
     "grunt": "^1.0.4",
